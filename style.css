@@ -1,0 +1,31 @@
+#countLabel{
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    text-align: center;
+    font-family: Tahoma;
+}
+
+#btnContainer{
+    text-align: center;
+    
+}
+.Buttons{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: skyblue;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+#decButton:hover{
+    background-color: red;
+}
+#resButton:hover{
+    color: black;
+    background-color: white;
+}
+#incButton:hover{
+    background-color: green;
+}
