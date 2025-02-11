@@ -1,0 +1,11 @@
+body{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#container{
+    background-color: rgba(128, 128, 128, 0.432);
+    margin: auto;
+    max-width: 600px;
+    padding: 25px 25px;
+}
