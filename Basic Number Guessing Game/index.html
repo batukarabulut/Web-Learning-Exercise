@@ -4,20 +4,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image" href="images/icon.png">
+        <link rel="icon" type="image" href="jpeg/icon.jpeg">
         <link rel="stylesheet" href="style.css">
-        <title>Dice Roller</title>
+        <title></title>
     </head>
     <body>
-        <div id="container">
-            <h1>Dice Roller</h1>
-            <label for=""># of dice</label>
-            <input type="number" name="" id="numOfDice" value="1" min="1">
-            <button onclick="rollDice()">Roll Dice</button> <br> <br>
-            <div id="diceResult"></div>
-            <div id="diceImages"></div>
 
+        <div id="container">
+            <h1>Welcome!</h1>
+            <h2 id="myH2"></h2> 
+            <input type="number" id="myGuess"> <br> <br>
+            <button type="submit" id="guessBtn">Guess</button>
+            <br>
+            <p id="resultText"></p>
+            <p id="attemptsCounter"></p>
         </div>
+      
         <script src="index.js"></script>
     </body> 
 </html> 
