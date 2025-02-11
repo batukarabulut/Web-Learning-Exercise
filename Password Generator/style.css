@@ -1,0 +1,42 @@
+#container{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    background-color: lightgray;
+}
+#generateBtn{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 7px 12px 7px;
+    cursor: pointer;
+    background-color: darkseagreen;
+}
+
+#generateBtn:hover{
+    background-color: green;
+    color: white;
+}
+
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center; 
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+#result{
+    gap: 10px;
+    margin: auto;
+    background-color: black;
+    color: green;
+    font-size: 1.5em;
+    text-align: center;
+}
