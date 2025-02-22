@@ -1,5 +1,3 @@
-
-
 const display = document.getElementById("display");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
@@ -17,7 +15,6 @@ function start(){
         timer = setInterval(update, 10);
         isRunning = true;
     }
-
 }
 
 
@@ -27,7 +24,6 @@ function stop(){
         elapsedTime = Date.now() - startTime;
         isRunning = false;
     }
-
 }
 
 
