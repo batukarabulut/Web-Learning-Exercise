@@ -1,0 +1,265 @@
+.navbar ul{
+    list-style-type: none;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 10px ;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbarEcon ul {
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    list-style-type: none;
+    background-color: rgba(128, 128, 128, 0.088);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+  }
+  
+
+.navbarEcon a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+}
+
+.navbarEcon li a {
+  display: inline-block;
+  white-space: nowrap;
+    
+  }
+  
+
+.navbarEcon .up {
+    color: green; 
+}
+
+.navbarEcon .down {
+    color: red; 
+}
+
+.navbarEcon .flat {
+    color: gray; 
+}
+
+/* Ana içerik düzeni */
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 40%;
+    max-width: 550px;
+    margin: 20px 3% 20px 15%;
+    overflow: hidden;
+    float: left;
+  }
+  
+  .slider {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Prev / Next butonlar */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .slider-btn.prev {
+    left: 10px;
+  }
+  
+  .slider-btn.next {
+    right: 10px;
+  }
+  
+  /* Pagination */
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-dots .dot.active {
+    background-color: red;
+  }
+
+  /* Mobil Responsive */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    
+    .slider-wrapper, .right-sidebar {
+      width: 95%;
+      margin: 10px auto;
+    }
+  }
+  
+/* Yan Haber Kutusu */
+.side-news {
+  width: 25%;
+  float: left;
+  margin: 20px 0;
+}
+
+.news-card {
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-card h3 {
+  padding: 10px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.news-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }   
+  
+
+  .sticky-ad {
+    position: fixed;
+    top: 120px;
+    left: max(calc(50% - 600px - 50px), 16px); /* içerik sola yaslı + boşluk */
+    width: 120px;
+    z-index: 999;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .sticky-ad img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #999;
+  }
+
+  .sticky-ad-right {
+    position: fixed;
+    top: 120px;
+    right: max(calc(50% - 500px - 140px), 16px); /* içerik genişliğine göre hizalanır */
+    width: 120px;
+    z-index: 999;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .sticky-ad-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .sticky-ad-right .close-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #999;
+  }
+  
+  /* Mobilde gizle */
+  @media (max-width: 768px) {
+    .sticky-ad-right {
+      display: none;
+    }
+  }
+  
+  
+  

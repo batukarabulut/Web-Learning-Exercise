@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--font awesome cdn-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--custom css-->
+        <link rel="stylesheet" href="style.css">
+        <title>Haber Sitesi</title>
+    </head>
+    <body>
+ 
+  <!-- Sticky Ad -->
+  <div class="sticky-ad" id="sticky-ad-left">
+    <span class="ad-label">Reklam</span>
+    <span class="close-btn" id="close-ad-left">✕</span>
+    <a href="https://www.houseofsuperstep.com/" target="_blank">
+      <img src="ad1.png" alt="Advertisement">
+    </a>
+  </div>
+
+  <!-- Sticky Menü -->
+  <nav class="navbar">
+    <ul>
+        <li><a href="">SON DAKİKA</a></li>
+        <li><a href="">YAZARLAR</a></li>
+        <li><a href="">GÜNDEM</a></li>
+        <li><a href="">EKONOMİ</a></li>
+        <li><a href="">DÜNYA</a></li>
+        <li><a href="">GÜNÜN İÇİNDEN</a></li>
+        <li><a href="">SPOR</a></li>
+        <li><a href="">HAYAT</a></li>
+        <li><a href="">MAGAZİN</a></li>
+        <li><a href="">FİNANS</a></li>
+        <li><a href="">RESMİ İLANLAR</a></li>
+    </ul>
+</nav>
+
+<div class="navbarEcon">
+    <ul>
+
+    </ul>
+  </div>
+  
+<div class="content-wrapper">
+  <!-- Slider Alanı -->
+  <div class="slider-wrapper">
+    <div class="slider" id="newsSlider"></div>
+   
+    <!-- Prev / Next -->
+    <button class="slider-btn prev" id="prevBtn">&#10094;</button>
+    <button class="slider-btn next" id="nextBtn">&#10095;</button>
+    
+    <!-- Pagination Dots -->
+    <div class="slider-dots" id="sliderDots"></div>
+  </div>
+
+  <!-- Diğer Haberler Kutusu -->
+  <div class="side-news">
+    <a href="https://www.sozcu.com.tr/2025/gundem/dunyanin-en-zengin-kadinlari-ve-servetleri-aciklandi-1234567" target="_blank" class="news-card-link">
+      <div class="news-card">
+        <img src="https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2025/4/servettttjpg-FSh7soWugEq4YlRRjmUUjQ.jpg?w=776&h=436&mode=crop&scale=both" alt="Zengin Kadınlar">
+        <h3>Dünyanın en zengin kadınları ve servetleri açıklandı</h3>
+      </div>
+    </a>    
+  </div>
+</div>
+
+<div class="sticky-ad-right" id="sticky-ad-right">
+  <span class="ad-label">Reklam</span>
+  <a href="https://www.fashfed.com/" target="_blank"><img src="ad2.png" alt="right-ad"></a>
+  <span class="close-btn" id="close-ad-right">✕</span>
+</div>
+
+
+        <!--custom js-->
+        <script src="index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body> 
+</html>     
