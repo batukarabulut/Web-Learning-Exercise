@@ -110,8 +110,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             };
 
-
-
             slide.appendChild(img);
             slider.appendChild(slide);
             slides.push(slide);
@@ -130,6 +128,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Slider verisi alınamadı.", error);
     }
 
+    // Advertise
+
     const closeAdLeft = document.getElementById("close-ad-left");
     const leftAd = document.getElementById("sticky-ad-left");
     const closeAdRight = document.getElementById("close-ad-right");
@@ -142,9 +142,111 @@ document.addEventListener("DOMContentLoaded", async () => {
     closeAdRight.addEventListener("click", () =>{
         rightAd.style.display = "none";
     })
+
+    function getWeatherEmoji(iconCode) {
+        const map = {
+          "01d": "☀️",
+          "01n": "🌙",
+          "02d": "🌤️",
+          "02n": "☁️",
+          "03d": "☁️",
+          "03n": "☁️",
+          "04d": "☁️",
+          "04n": "☁️",
+          "09d": "🌧️",
+          "09n": "🌧️",
+          "10d": "🌦️",
+          "10n": "🌧️",
+          "11d": "🌩️",
+          "11n": "🌩️",
+          "13d": "❄️",
+          "13n": "❄️",
+          "50d": "🌫️",
+          "50n": "🌫️"
+        };
+      
+        return map[iconCode] || "❓";
+    }
+      
     
+    const weatherUrl = "https://run.mocky.io/v3/ef949f64-b0a7-464e-a5c9-08960801da22";
+    const weatherCard = document.getElementById("weatherCard");
 
+    try{
+        const res = await fetch(weatherUrl);
+        const data = await res.json();
+        
+        const weather = data.weather;
+        
+        const cityEl = document.createElement("h4");
+        cityEl.textContent = weather.city;
+        weatherCard.appendChild(cityEl);
+        
+        const tempEl = document.createElement("div");
+        tempEl.classList.add("current-temp");
+        
+        const tempSpan = document.createElement("span");
+        tempSpan.textContent = `${weather.temp}°C`;
 
+        const emojiSpan = document.createElement("span");
+        const today = weather.forecast.find(day => day.day === "Bugün");
+        const emojiCode = today ? today.icon : "01d";
+        emojiSpan.textContent = getWeatherEmoji(emojiCode);
+        
+        
+        tempEl.appendChild(emojiSpan);
+        tempEl.appendChild(tempSpan);
+        weatherCard.appendChild(tempEl);
+        
+        
+        const descEl = document.createElement("p");
+        descEl.classList.add("desc");
+        descEl.textContent = weather.desc;
+        weatherCard.appendChild(descEl);
+        
+        const forecastRow = document.createElement("div");
+        forecastRow.classList.add("forecast-row");
+        
+        weather.forecast.forEach(day => {
+          const dayBox = document.createElement("div");
+          dayBox.classList.add("forecast-day");
+        
+          const dayName = document.createElement("div");
+          dayName.classList.add("forecast-day-name");
+          dayName.textContent = day.day;
+        
+          const icon = document.createElement("span");
+          icon.textContent = getWeatherEmoji(day.icon);
+          icon.style.fontSize = "1.5rem";
+          
+        
+          const temps = document.createElement("div");
+          temps.classList.add("forecast-temp");
+          
+          const maxTemp = document.createElement("div");
+          maxTemp.textContent = `${day.max}°`;
+          
+          const minTemp = document.createElement("div");
+          minTemp.textContent = `${day.min}°`;
+          
+          temps.appendChild(maxTemp);
+          temps.appendChild(minTemp);
+          
+        
+          dayBox.appendChild(dayName);
+          dayBox.appendChild(icon);
+          dayBox.appendChild(temps);
+          forecastRow.appendChild(dayBox);
+        });
+        
+        weatherCard.appendChild(forecastRow);
+    }
+    catch(error){
+        const failMsg = document.createElement("p");
+        failMsg.textContent = "Hava durumu alınamadı ❌";
+        weatherCard.appendChild(failMsg);
+        console.error("Mock hava durumu hatası:", error);
+    }
 
 
 
