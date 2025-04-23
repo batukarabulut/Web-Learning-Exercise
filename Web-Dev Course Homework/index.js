@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mainNavbar = document.getElementById("mainNavbar");
+    
+    mobileMenuToggle.addEventListener("click", () => {
+        mobileMenuToggle.classList.toggle("active");
+        mainNavbar.classList.toggle("active");
+    });
     
     const ul = document.querySelector(".navbarEcon ul");
 
