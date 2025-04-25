@@ -1,0 +1,67 @@
+body {
+    font-size: clamp(12px, 1.2vw, 14px);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.navbar{
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    background-color: rgba(236, 236, 236, 0.624);
+}
+
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: visible;
+    justify-content: space-between;
+}
+
+.navbar li{
+    flex: 1;
+    position: relative;
+}
+
+.navbar li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%; /* Yukarıdan boşluk */
+    height: 60%; /* Çizginin boyu */
+    width: 1px;
+    background-color: #ccc;
+}
+
+/* Son elemana çizgi koyma */
+.navbar li:last-child::after {
+    content: none;
+}
+
+.navbar li:first-child::before {
+    content: none;
+}
+
+.navbar a{
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
