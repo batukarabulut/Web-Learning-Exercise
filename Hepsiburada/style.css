@@ -20,12 +20,14 @@ body {
 .navbar-container{
     position: sticky;
     margin-top: 0;
-    z-index: 2000;
+    z-index: 2000;  
     width: 100%;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar{
@@ -140,7 +142,34 @@ body {
     color: #ff6600;
 }
 
+.quick-links-section {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
 
+.quick-links-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px;
+}
+
+.quick-link-card {
+    background-color: #ffffff;
+    width: 100px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.quick-link-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
 
 
