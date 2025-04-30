@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const quickLinksUrl = "https://run.mocky.io/v3/62dfa9a1-48e8-4468-832f-54acb4cfad64";
+    const quickLinksUrl = "https://run.mocky.io/v3/3439a138-03d8-4205-b80b-0ec4a0288623";
     const quicksContainer = document.querySelector(".quick-links-container");
     
     try {
@@ -9,12 +9,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         data.forEach((element) => {
             const quicksDiv = document.createElement("div");
             quicksDiv.classList.add("quick-link-card");
-            
+
+            const imgLink = document.createElement("a");
+            imgLink.href = element.url;
+            imgLink.target = "_blank";
+
             const img = document.createElement("img");
             img.src = element.image;
             img.alt = element.title;
 
-            quicksDiv.appendChild(img);
+            imgLink.appendChild(img);
+            quicksDiv.appendChild(imgLink);
             quicksContainer.appendChild(quicksDiv);
         });
 
