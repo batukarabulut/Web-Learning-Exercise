@@ -169,18 +169,52 @@ body {
     cursor: pointer;
 }
 
-.slider{
+/* Kayarak geçişli slider için gereken stiller */
+.slider {
     position: relative;
     width: 100%;
+    max-width: 1000px;
+    height: 200px;
     margin: auto;
     overflow: hidden;
-}
-
-.slider img{
+    border-radius: 8px;
+  }
+  
+  .slides {
+    display: flex;
     width: 100%;
-    display: none; 
+    height: 100%;
+    position: relative;
+  }
+  
+  .slides a {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+
+/* Slider butonları */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
 }
 
-img.displaySlide{
-    display: block;
-}
+.prev { left: 10px; }
+.next { right: 10px; }

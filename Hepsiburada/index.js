@@ -27,18 +27,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Quick links cannot find.", error);
     }
 
-    const slider = document.querySelector(".sllider");
+    const slider = document.querySelector(".slider .slides");
     const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector("next");
+    const nextBtn = document.querySelector(".next");
 
-    sliderUrl = "https://run.mocky.io/v3/3bb01e8a-f167-4635-85f2-ffa017c3b2af";
-    currentIndex = 0;
+    const sliderUrl = "https://run.mocky.io/v3/68ffc2e5-1680-416f-a955-225f2735c34b";
+    let currentIndex = 0;
 
     slides = [];
 
     const updateSlider = () => {
-        if(slides.length === 0) return;
-
         slides.forEach((slide,index) => {
             slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
         });
@@ -56,12 +54,32 @@ document.addEventListener("DOMContentLoaded", async () => {
         updateSlider();
     });
 
+
     try{
         const response = await fetch(sliderUrl);
         const data = await response.json();
 
         slider.innerHTML = "";
         slides = [];
+
+        data.forEach((item,index) => {
+            const a = document.createElement("a");
+            a.href = item.url;
+            a.target = "_blank";
+
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.title;
+
+            img.classList.add("slide");
+            
+            a.appendChild(img);
+            slider.appendChild(a);
+            slides.push(a);
+
+        });
+
+        updateSlider();
     }
     catch(error){
         console.error("Slider Verisi Alınamadı", error);
