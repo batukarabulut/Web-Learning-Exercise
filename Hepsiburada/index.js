@@ -26,4 +26,47 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error("Quick links cannot find.", error);
     }
+
+    const slider = document.querySelector(".sllider");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector("next");
+
+    sliderUrl = "https://run.mocky.io/v3/3bb01e8a-f167-4635-85f2-ffa017c3b2af";
+    currentIndex = 0;
+
+    slides = [];
+
+    const updateSlider = () => {
+        if(slides.length === 0) return;
+
+        slides.forEach((slide,index) => {
+            slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+        });
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if(slides.length === 0) return;
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if(slides.length === 0) return;
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    });
+
+    try{
+        const response = await fetch(sliderUrl);
+        const data = await response.json();
+
+        slider.innerHTML = "";
+        slides = [];
+    }
+    catch(error){
+        console.error("Slider Verisi Alınamadı", error);
+    }
+
+
+
 });

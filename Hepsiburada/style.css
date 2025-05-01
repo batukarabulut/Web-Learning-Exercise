@@ -155,25 +155,32 @@ body {
     padding: 0 20px;
 }
 
-.quick-link-card {
+.quick-link-card{
     background-color: #ffffff;
     width: 100px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.quick-link-card > a > img {
+.quick-link-card > a > img{
     width: 100px;
     height: 90px;
     object-fit: contain;
     cursor: pointer;
 }
 
+.slider{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
 
+.slider img{
+    width: 100%;
+    display: none; 
+}
 
-
-
-
-
-
-
+img.displaySlide{
+    display: block;
+}
