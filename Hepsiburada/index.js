@@ -27,30 +27,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Quick links cannot find.", error);
     }
 
-    const slider = document.querySelector(".slider .slides");
+    const slider = document.querySelector(".slides");
     const prevBtn = document.querySelector(".prev");
     const nextBtn = document.querySelector(".next");
 
     const sliderUrl = "https://run.mocky.io/v3/68ffc2e5-1680-416f-a955-225f2735c34b";
     let currentIndex = 0;
 
-    slides = [];
+    let slideElements = [];
 
     const updateSlider = () => {
-        slides.forEach((slide,index) => {
+        if (slideElements.length === 0) return;
+        slideElements.forEach((slide,index) => {
             slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
         });
     }
 
     prevBtn.addEventListener("click", () => {
-        if(slides.length === 0) return;
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        if (slideElements.length === 0) return;
+        currentIndex = (currentIndex - 1 + slideElements.length) % slideElements.length;
         updateSlider();
     });
 
     nextBtn.addEventListener("click", () => {
-        if(slides.length === 0) return;
-        currentIndex = (currentIndex + 1) % slides.length;
+        if (slideElements.length === 0) return;
+        currentIndex = (currentIndex + 1) % slideElements.length;
         updateSlider();
     });
 
@@ -60,23 +61,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
 
         slider.innerHTML = "";
-        slides = [];
+        slideElements = [];
 
         data.forEach((item,index) => {
-            const a = document.createElement("a");
-            a.href = item.url;
-            a.target = "_blank";
+            const slide = document.createElement("div");
+            slide.classList.add("slide");
 
             const img = document.createElement("img");
             img.src = item.image;
             img.alt = item.title;
 
-            img.classList.add("slide");
-            
-            a.appendChild(img);
-            slider.appendChild(a);
-            slides.push(a);
+            img.onload = function() {
+                if (index === 0) {
+                    slider.style.height = `${this.height}px`;
+                }
+            };
 
+
+            slide.appendChild(img);
+            slider.appendChild(slide);
+            slideElements.push(slide);
         });
 
         updateSlider();
@@ -86,5 +90,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
+
+/*
+ setInterval(() => {
+            currentIndex = (currentIndex + 1) % slideElements.length;
+            updateSlider();
+        }, 5000); // Change slide every 5 seconds
+*/
 
 });
