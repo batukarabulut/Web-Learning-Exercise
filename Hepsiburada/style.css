@@ -5,6 +5,10 @@ body {
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .color-bar {
     display: flex;
     height: 6px; 
@@ -171,12 +175,11 @@ body {
 
 .slider{
     position: relative;
-    width: 55%;
-    max-width: 650px;
-    margin: 20px 2% 10px 9%;
+    width: 50%;
+    max-width: 1240px;
+    margin: 10px 2% 5px 8.7%;
     overflow: hidden;
     float: left;
-    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -185,7 +188,6 @@ body {
 .slides {
     display: flex;
     width: 100%;
-    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -195,13 +197,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     transition: transform 0.5s ease-in-out;
 }
     
 .slide img {
     width: 100%;
-    height: auto;
     object-fit: cover;
     display: block;
 }
