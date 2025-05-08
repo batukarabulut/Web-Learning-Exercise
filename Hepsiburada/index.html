@@ -9,7 +9,7 @@
         <!--custom css-->
         <link rel="stylesheet" href="style.css">
         <title>Hepsiburada</title>
-      </head>
+    </head>
     <body>
       <!-- Navigation Bar -->
       <div class="navbar-container">
@@ -21,7 +21,7 @@
           <div class="segment" style="background-color: purple; flex: 2;"></div>
         </div>
         <nav class="navbar" id="main-navbar">
-          <ul>
+          <ul id="navbar-menu">
             <li><a href="#">Elektronik</a></li>
             <li><a href="#">Moda</a></li>
             <li><a href="#">Ev, Yaşam, Kırtasiye, Ofis</a></li>
@@ -44,30 +44,40 @@
             <li><a href="#">Süpermarket, Pet Shop</a></li>
             <li><a href="#">Kitap, Müzik, Film, Hobi</a></li>
           </ul>
+          <!-- Hamburger button will be added by JavaScript -->
         </nav>
       </div>
 
       <section class="quick-links-section">
         <div class="quick-links-container">
-          
+          <!-- Quick links will be added by JavaScript -->
         </div>
       </section>
 
-      <div class="slider">
-        <div class="slides">
-          
+      <section class="slider-firsat-wrapper">
+        <div class="slider">
+          <div class="slides">
+            <!-- Slider content will be added by JavaScript -->
+          </div>
+          <button class="prev">&#10094</button>
+          <button class="next">&#10095</button> 
         </div>
-        <button class="prev">&#10094</button>
-        <button class="next">&#10095</button> 
+      
+        <div class="elektronik-firsatlar-box">
+          <h2>Elektronik Fırsatlar</h2>
+          <div class="firsat-products">
+            <a id="firsat-link" target="_blank">
+              <div class="product-card">
+                <img id="firsat-image" src="" alt="Elektronik Ürün" />
+                <h4 id="firsat-name"></h4>
+                <p id="firsat-price"></p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="etronic-firsats">
-
-      </div>
-  
-
+      </section>
+      
       <!--custom js-->
       <script src="index.js"></script>
     </body> 
-</html>     
+</html>
