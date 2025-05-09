@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>🎬 Movie Finder</h1>
+        <nav>
+            <!-- Navigation links can go here -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Enter a movie name..." />
+                <button id="searchButton">Search</button>
+            </div>
+        </section>
+        
+        <section class="results-container">
+            <div id="results">
+                <!-- Static movie card example -->
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://m.media-amazon.com/images/M/MV5BODIyMDdhNTgtNDlmOC00MjUxLWE2NDItODA5MTdkNzY3ZTdhXkEyXkFqcGc@._V1_SX300.jpg" alt="Batman Begins">
+                    </div>
+                    <div class="movie-info">
+                        <h2 class="movie-title">Batman Begins</h2>
+                        <p class="movie-year"><strong>Year:</strong> 2005</p>
+                        <p class="movie-type"><strong>Type:</strong> movie</p>
+                        <p class="movie-id"><strong>IMDB ID:</strong> tt0372784</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Movie Finder - Find your favorite movies</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
