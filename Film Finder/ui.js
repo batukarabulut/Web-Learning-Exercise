@@ -12,7 +12,7 @@ export const renderMovies = (movies) => {
         movieCard.classList.add("movie-card");
 
         const moviePoster = document.createElement("div");
-        moviePoster.classList.add("movie-poster"); // will append on movie-card
+        moviePoster.classList.add("movie-poster"); 
 
         const posterImg = document.createElement("img");
         posterImg.src = movie.Poster === "N/A" 
@@ -22,7 +22,7 @@ export const renderMovies = (movies) => {
         moviePoster.appendChild(posterImg);
 
         const movieInfo = document.createElement("div");
-        movieInfo.classList.add("movie-info"); // will apend on movie-card
+        movieInfo.classList.add("movie-info"); 
 
         const movieTitle = document.createElement("h2");
         movieTitle.classList.add("movie-title");
