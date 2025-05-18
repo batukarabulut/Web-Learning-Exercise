@@ -1,0 +1,250 @@
+.navbar-container {
+  width: 100%;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.logo h1 {
+  color: #FF6000;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.search-bar {
+  display: flex;
+  width: 50%;
+  max-width: 600px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #FF6000;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.action-link, .cart-link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.action-link:hover, .cart-link:hover {
+  color: #FF6000;
+}
+
+.cart-link {
+  position: relative;
+  font-weight: 600;
+}
+
+.color-bar {
+  display: flex;
+  width: 100%;
+  height: 4px;
+}
+
+.segment {
+  height: 100%;
+}
+
+.category-nav {
+  display: flex;
+  background-color: #fff;
+  padding: 0;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu-item {
+  position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-item a {
+  display: block;
+  padding: 15px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.menu-item:hover > a {
+  color: #FF6000;
+}
+
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 200px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.has-submenu:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.has-submenu::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: transparent;
+}
+
+.submenu-item a {
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #555;
+  border-left: 3px solid transparent;
+  white-space: nowrap;
+  display: block;
+}
+
+.submenu-item a:hover {
+  background-color: #F8F8F8;
+  color: #FF6000;
+  border-left-color: #FF6000;
+}
+
+@media (max-width: 992px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-bar {
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .user-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .action-link, .cart-link {
+    margin: 0;
+  }
+  
+  .category-nav {
+    padding: 0;
+  }
+  
+  .main-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menu-item {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .submenu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    padding-left: 20px;
+    background-color: #F8F8F8;
+    transform: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .has-submenu:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .submenu-item a {
+    padding: 10px 15px;
+  }
+} 
